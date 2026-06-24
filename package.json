@@ -39,7 +39,7 @@
   "dependencies": {
     "@clack/prompts": "^1.6.0",
     "fs-extra": "^11.2.0",
-    "globby": "^14.0.2"
+    "globby": "^16.2.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
