@@ -49,7 +49,7 @@ function bundledTemplatesDir(): string {
 }
 
 function defaultCacheDir(): string {
-  return path.join(os.homedir(), ".cache", "agent-sync", "registry");
+  return path.join(os.homedir(), ".cache", "agentic-sync", "registry");
 }
 
 export async function listBundledSkills(): Promise<SkillManifest[]> {
@@ -165,6 +165,7 @@ export async function fetchRemoteSkillTemplate(
 ): Promise<SkillTemplate> {
   const remoteBase =
     opts.remoteBase ??
+    process.env["AGENTIC_SYNC_REGISTRY"] ??
     process.env["AGENT_SYNC_REGISTRY"] ??
     DEFAULT_REMOTE_BASE;
   const cacheDir = opts.cacheDir ?? defaultCacheDir();
@@ -195,6 +196,6 @@ export async function fetchRemoteSkillTemplate(
   }
 
   throw new Error(
-    `Skill "${skillName}" not found in registry (${remoteBase}), local cache, or bundled templates. Run \`agent-sync list\` to see available skills.`,
+    `Skill "${skillName}" not found in registry (${remoteBase}), local cache, or bundled templates. Run \`agentic-sync list\` to see available skills.`,
   );
 }

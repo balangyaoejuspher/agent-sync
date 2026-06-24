@@ -1,11 +1,11 @@
 {
-  "name": "agent-sync",
-  "version": "0.1.0",
+  "name": "agentic-sync",
+  "version": "0.1.1",
   "description": "Map a codebase's stack and bootstrap localized Agent Skills + MCP configs for Claude Code, Copilot, and Cursor.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "agent-sync": "./dist/index.js"
+    "agentic-sync": "./dist/index.js"
   },
   "main": "./dist/index.js",
   "files": [

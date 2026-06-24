@@ -21,7 +21,7 @@ function run(args: string[], cwd: string): { stdout: string; stderr: string; sta
 
 function copyFixture(name: string): string {
   const src = path.resolve(here, "fixtures", name);
-  const dst = fs.mkdtempSync(path.join(os.tmpdir(), `agent-sync-${name}-`));
+  const dst = fs.mkdtempSync(path.join(os.tmpdir(), `agentic-sync-${name}-`));
   fs.cpSync(src, dst, { recursive: true });
   return dst;
 }

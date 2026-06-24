@@ -16,7 +16,7 @@ If you don't have a GitHub account, open an issue titled `Security contact reque
 
 The following are in scope:
 
-- The `agent-sync` CLI (`init`, `add`, `list`, `compile`, `mcp install`).
+- The `agentic-sync` CLI (`init`, `add`, `list`, `compile`, `mcp install`).
 - The bundled MCP server (`templates/mcp-server.mjs`) that is copied into user projects by `mcp install`.
 - Bundled skill templates under `templates/skills/`.
 
@@ -32,6 +32,6 @@ The following are **out of scope** for security reports (open a normal issue ins
 
 ## Hardening notes for users
 
-- `agent-sync mcp install` writes to the user's IDE configuration files. It always creates a timestamped backup (`*.bak.<timestamp>`) next to the original.
+- `agentic-sync mcp install` writes to the user's IDE configuration files. It always creates a timestamped backup (`*.bak.<timestamp>`) next to the original.
 - The MCP server only exposes files under the project's `.agents/skills/` directory and rejects URIs that try to escape it.
 - The remote skill registry is fetched over HTTPS. Use `--registry <url>` to point at a registry you control, or `--offline` to skip the network entirely and rely on the bundled / cached templates.

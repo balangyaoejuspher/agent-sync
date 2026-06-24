@@ -14,7 +14,7 @@ for (let i = 0; i < args.length; i++) {
 
 const skillsDir = join(projectRoot, '.agents', 'skills');
 const PROTOCOL_VERSION = '2024-11-05';
-const SERVER_INFO = { name: 'agent-sync', version: '0.1.0' };
+const SERVER_INFO = { name: 'agentic-sync', version: '0.1.1' };
 
 async function listSkillFiles() {
   if (!existsSync(skillsDir)) return [];
@@ -47,11 +47,11 @@ async function walk(dir) {
 }
 
 function uriFor(skill, rel) {
-  return `agent-sync://${skill}/${rel}`;
+  return `agentic-sync://${skill}/${rel}`;
 }
 
 function parseUri(uri) {
-  const m = uri.match(/^agent-sync:\/\/([^/]+)\/(.+)$/);
+  const m = uri.match(/^agentic-sync:\/\/([^/]+)\/(.+)$/);
   if (!m) return null;
   return { skill: decodeURIComponent(m[1]), rel: m[2].split('/').map(decodeURIComponent).join('/') };
 }
@@ -69,7 +69,7 @@ async function handleToolsList() {
     tools: [
       {
         name: 'list_skills',
-        description: 'List every Agent Skill synthesized for this project by agent-sync.',
+        description: 'List every Agent Skill synthesized for this project by agentic-sync.',
         inputSchema: { type: 'object', properties: {}, additionalProperties: false }
       },
       {
@@ -128,7 +128,7 @@ async function handleResourcesList() {
       .map((f) => ({
         uri: uriFor(f.skill, f.rel),
         name: `${f.skill}/${f.rel}`,
-        description: `agent-sync skill resource (${f.skill})`,
+        description: `agentic-sync skill resource (${f.skill})`,
         mimeType: f.rel.endsWith('.json') ? 'application/json' : 'text/markdown'
       }))
   };
