@@ -124,4 +124,31 @@ Tests live under `tests/`, fixtures under `tests/fixtures/`. When adding a new d
 
 ## Releasing
 
-(Reserved for maintainers.) Bump `package.json` version, tag `v<version>`, run `npm publish`, draft a GitHub release.
+Releases are automated. To cut one:
+
+1. Bump `version` in `package.json` to the new version.
+2. Open a PR with the bump, get it merged into `main`.
+3. After the merge lands, tag and push:
+
+   ```bash
+   git tag v$(node -p "require('./package.json').version")
+   git push origin --tags
+   ```
+
+4. The `release` workflow (`.github/workflows/release.yml`) will:
+   - re-run typecheck / build / tests
+   - verify the tag matches `package.json#version`
+   - publish to npm with `--provenance` using the `NPM_TOKEN` secret
+   - create a GitHub Release with auto-generated notes
+
+### One-time setup for npm publishing
+
+1. Create an npm access token (Automation token preferred). https://www.npmjs.com/settings/<your-user>/tokens
+2. In the repo settings, create an Environment named `npm` (Settings → Environments → New environment).
+3. Add a secret `NPM_TOKEN` to that environment.
+4. The `release` job is wired to `environment: npm` so the token is only exposed to that job.
+
+## Branch protection
+
+`main` is protected: PRs are required, the `ci` status check must pass, force pushes and deletions are blocked, and history is linear. If you're a maintainer who needs the exact ruleset spec, ping the lead — it isn't checked into the public repo by design.
+
