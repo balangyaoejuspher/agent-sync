@@ -1,0 +1,7 @@
+{
+  "name": "auth-map",
+  "version": "0.1.0",
+  "description": "Auth surface map. Identifies authentication middleware, role/permission constants, and which routes are public vs authenticated.",
+  "tags": ["security", "auth", "rbac"],
+  "requires": {}
+}

@@ -1,0 +1,7 @@
+{
+  "name": "ci-pipeline",
+  "version": "0.1.0",
+  "description": "CI/CD pipeline map. Lists every CI job, its triggers, and what it runs so the agent can answer pipeline questions and modify workflows safely.",
+  "tags": ["ci", "cd", "devops"],
+  "requires": {}
+}

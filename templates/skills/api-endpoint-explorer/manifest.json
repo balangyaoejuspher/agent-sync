@@ -1,0 +1,7 @@
+{
+  "name": "api-endpoint-explorer",
+  "version": "0.1.0",
+  "description": "API Endpoint Explorer. Surfaces every HTTP route in the project (method, path, source location) so the agent can locate handlers and write idiomatic new endpoints.",
+  "tags": ["api", "routing", "http"],
+  "requires": {}
+}

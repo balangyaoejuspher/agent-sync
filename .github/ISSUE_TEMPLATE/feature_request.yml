@@ -1,0 +1,52 @@
+name: Feature request
+description: Suggest a new skill, detector, command, or improvement.
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. The more specific you can be about the use case, the better.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: What are you trying to do today that agent-sync makes hard or impossible?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should agent-sync do? A new command? A new skill template? A new detector?
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      multiple: true
+      options:
+        - New skill template
+        - New stack detector (language / framework / ORM)
+        - New CLI command or flag
+        - New compile target (IDE rule format)
+        - Registry / remote behavior
+        - MCP server capability
+        - Performance / DX
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Links to related projects, prior art, screenshots, etc.
+    validations:
+      required: false

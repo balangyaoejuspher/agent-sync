@@ -1,0 +1,51 @@
+{
+  "name": "agent-sync",
+  "version": "0.1.0",
+  "description": "Map a codebase's stack and bootstrap localized Agent Skills + MCP configs for Claude Code, Copilot, and Cursor.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "agent-sync": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node ./dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "mcp",
+    "claude",
+    "copilot",
+    "cursor",
+    "cli"
+  ],
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.9"
+  }
+}

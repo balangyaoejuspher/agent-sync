@@ -1,0 +1,7 @@
+{
+  "name": "db-navigator",
+  "version": "0.1.0",
+  "description": "Database Schema Navigator. Surfaces the project's schema, dialect, and existing query patterns so the agent can answer schema questions and write idiomatic queries.",
+  "tags": ["database", "schema", "orm"],
+  "requires": {}
+}
