@@ -13,10 +13,10 @@ import { runUpdate } from "./commands/update.js";
 import { runDoctor } from "./commands/doctor.js";
 import { ALL_CLIENTS, type AiClient } from "./config.js";
 
-const HELP = `agent-sync — package manager for AI context
+const HELP = `agentic-sync — package manager for AI context
 
 Usage:
-  agent-sync <command> [options]
+  agentic-sync <command> [options]
 
 Commands:
   init [--yes] [--target <list>]    Profile the current repo and scaffold .agents/
@@ -36,7 +36,7 @@ Commands:
 Options:
   --cwd <dir>             Run against a different target directory
   --registry <url>        Override the remote skill registry base URL
-                          (env: AGENT_SYNC_REGISTRY)
+                          (env: AGENTIC_SYNC_REGISTRY)
   --offline               Skip the network; use cache or bundled templates only
   --target <list>         Comma-separated subset of: claude, copilot, cursor (or "all")
   --client <list>         Comma-separated subset of: claude, cursor (or "all")
@@ -166,7 +166,7 @@ async function main(): Promise<void> {
       const skill = args.positional[0];
       if (!skill) {
         process.stderr.write(
-          "Error: `add` requires a skill name. Example: agent-sync add db-navigator\n",
+          "Error: `add` requires a skill name. Example: agentic-sync add db-navigator\n",
         );
         process.exit(2);
       }
@@ -209,7 +209,7 @@ async function main(): Promise<void> {
       const sub = args.positional[0];
       if (sub !== "install") {
         process.stderr.write(
-          "Error: `mcp` requires a subcommand. Try: agent-sync mcp install\n",
+          "Error: `mcp` requires a subcommand. Try: agentic-sync mcp install\n",
         );
         process.exit(2);
       }

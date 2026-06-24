@@ -12,7 +12,7 @@ export async function runUpdate(
   targetDir: string,
   opts: UpdateOptions = {},
 ): Promise<void> {
-  intro("agent-sync update");
+  intro("agentic-sync update");
   const s = spinner();
 
   const root = path.resolve(targetDir);
@@ -22,7 +22,7 @@ export async function runUpdate(
   if (!(await fs.pathExists(skillsDir))) {
     s.stop("No skills installed.");
     log.warn(
-      "No .agents/skills/ directory. Run `agent-sync init` then `agent-sync add <skill>` first.",
+      "No .agents/skills/ directory. Run `agentic-sync init` then `agentic-sync add <skill>` first.",
     );
     outro("Nothing to update.");
     return;

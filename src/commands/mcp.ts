@@ -114,14 +114,14 @@ function defaultServerName(projectRoot: string): string {
       .replace(/[^a-z0-9-]+/g, "-")
       .replace(/^-+|-+$/g, "")
       .slice(0, 40) || "project";
-  return `agent-sync-${base}`;
+  return `agentic-sync-${base}`;
 }
 
 export async function runMcpInstall(
   targetDir: string,
   opts: McpInstallOptions = {},
 ): Promise<void> {
-  intro("agent-sync mcp install");
+  intro("agentic-sync mcp install");
   const s = spinner();
 
   const projectRoot = path.resolve(targetDir);
@@ -181,7 +181,7 @@ export async function runMcpInstall(
       `Registered MCP server name: ${serverName}`,
       `Restart Claude Desktop / Cursor for the changes to take effect.`,
       `Exposed tools: list_skills, read_skill`,
-      `Exposed resources: agent-sync://<skill>/<file> (one per file under .agents/skills/)`,
+      `Exposed resources: agentic-sync://<skill>/<file> (one per file under .agents/skills/)`,
     ].join("\n"),
   );
 

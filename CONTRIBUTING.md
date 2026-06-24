@@ -1,4 +1,4 @@
-# Contributing to agent-sync
+# Contributing to agentic-sync
 
 Thanks for your interest — this project is open to PRs from anyone.
 
@@ -91,13 +91,13 @@ CI (populated when the skill is `ci-pipeline`):
 
 ### How resolution works at runtime
 
-`agent-sync add <name>` resolves the template in this order:
+`agentic-sync add <name>` resolves the template in this order:
 
-1. **Remote registry** — `${AGENT_SYNC_REGISTRY ?? DEFAULT_REMOTE_BASE}/<name>/manifest.json` (default: `https://raw.githubusercontent.com/balangyaoejuspher/agent-sync/main/templates/skills`).
-2. **Local cache** — `~/.cache/agent-sync/registry/<name>/`.
-3. **Bundled** — the copy that ships inside the installed `agent-sync` package.
+1. **Remote registry** — `${AGENTIC_SYNC_REGISTRY ?? DEFAULT_REMOTE_BASE}/<name>/manifest.json` (default: `https://raw.githubusercontent.com/balangyaoejuspher/agent-sync/main/templates/skills`).
+2. **Local cache** — `~/.cache/agentic-sync/registry/<name>/`.
+3. **Bundled** — the copy that ships inside the installed `agentic-sync` package.
 
-Anyone running `agent-sync add` after your PR merges to `main` will pick up the new skill immediately — no npm release required.
+Anyone running `agentic-sync add` after your PR merges to `main` will pick up the new skill immediately — no npm release required.
 
 ## Adding a stack detector
 

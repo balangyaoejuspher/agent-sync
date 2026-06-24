@@ -10,7 +10,7 @@ interface DoctorFinding {
 }
 
 export async function runDoctor(targetDir: string): Promise<void> {
-  intro("agent-sync doctor");
+  intro("agentic-sync doctor");
   const s = spinner();
   const root = path.resolve(targetDir);
   const findings: DoctorFinding[] = [];
@@ -21,7 +21,7 @@ export async function runDoctor(targetDir: string): Promise<void> {
     s.stop("No config.");
     findings.push({
       level: "error",
-      message: "Missing .agents/config.json — run `agent-sync init` first.",
+      message: "Missing .agents/config.json — run `agentic-sync init` first.",
     });
   } else {
     s.stop(
@@ -33,7 +33,7 @@ export async function runDoctor(targetDir: string): Promise<void> {
     if (ageDays > 30) {
       findings.push({
         level: "warn",
-        message: `config.json is ${ageDays.toFixed(0)} days old. Re-run \`agent-sync init\` if the stack has changed.`,
+        message: `config.json is ${ageDays.toFixed(0)} days old. Re-run \`agentic-sync init\` if the stack has changed.`,
       });
     }
     if (cfg.context.framework === "unknown") {
@@ -58,7 +58,7 @@ export async function runDoctor(targetDir: string): Promise<void> {
     s.stop("No skills installed.");
     findings.push({
       level: "warn",
-      message: "No .agents/skills/ directory. Run `agent-sync add <skill>`.",
+      message: "No .agents/skills/ directory. Run `agentic-sync add <skill>`.",
     });
   } else {
     const entries = await fs.readdir(skillsDir, { withFileTypes: true });
@@ -153,7 +153,7 @@ export async function runDoctor(targetDir: string): Promise<void> {
     findings.push({
       level: "warn",
       message:
-        "No IDE rule files written. Run `agent-sync compile` so Claude/Copilot/Cursor pick up the skills.",
+        "No IDE rule files written. Run `agentic-sync compile` so Claude/Copilot/Cursor pick up the skills.",
     });
   }
 

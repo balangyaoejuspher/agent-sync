@@ -27,7 +27,7 @@ export async function runInit(
   targetDir: string,
   opts: InitOptions = {},
 ): Promise<void> {
-  intro("agent-sync init");
+  intro("agentic-sync init");
   const s = spinner();
 
   s.start("Profiling repository...");
@@ -76,9 +76,9 @@ export async function runInit(
       `Targets: ${targets.map((t) => CLIENT_LABELS[t]).join(", ")}`,
       "",
       "Next steps:",
-      "  • Run `agent-sync list` to see available skills.",
-      "  • Run `agent-sync add db-navigator` to synthesize a Database Schema Navigator skill.",
-      "  • Run `agent-sync compile` to fan skills out into the IDE rule files for the selected clients.",
+      "  • Run `agentic-sync list` to see available skills.",
+      "  • Run `agentic-sync add db-navigator` to synthesize a Database Schema Navigator skill.",
+      "  • Run `agentic-sync compile` to fan skills out into the IDE rule files for the selected clients.",
     ].join("\n"),
     "Ready",
   );

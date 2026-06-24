@@ -30,7 +30,7 @@ export async function runAdd(
   targetDir: string,
   opts: AddOptions = {},
 ): Promise<void> {
-  intro(`agent-sync add ${skillName}`);
+  intro(`agentic-sync add ${skillName}`);
   const s = spinner();
 
   s.start("Analyzing repository layout...");

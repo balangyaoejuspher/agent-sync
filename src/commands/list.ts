@@ -2,7 +2,7 @@ import { intro, outro, log } from "@clack/prompts";
 import { listBundledSkills } from "../services/registry.js";
 
 export async function runList(): Promise<void> {
-  intro("agent-sync list");
+  intro("agentic-sync list");
   const skills = await listBundledSkills();
   if (skills.length === 0) {
     log.warn("No skills available in the bundled registry.");
